@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Lanches</title>
+  <style>
+ body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin: 30px 0;
+}
+
+table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1em;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1em;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.btn-exclusao, .btn-edicao {
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+}
+
+.btn-exclusao {
+  background-color: #e74c3c;
+}
+
+.btn-exclusao:hover {
+  background-color: #c0392b;
+}
+
+.btn-edicao {
+  background-color: #3498db;
+}
+
+.btn-edicao:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .btn-exclusao, .btn-edicao {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <h1>Lista de Lanches</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço (R$)</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < lanches.length; i++) { %>
+        <tr>
+          <td><%= lanches[i].id %></td>
+          <td><%= lanches[i].nome %></td>
+          <td><%= lanches[i].descricao %></td>
+          <td><%= lanches[i].preco %></td>
+          <td>
+            <button class="btn-exclusao" data-id="<%= lanches[i].id %>" data-nome="<%= lanches[i].nome %>">Excluir</button>
+            <button class="btn-edicao" data-id="<%= lanches[i].id %>">Editar</button>
+          </td>
+          <td>
+         </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+<script src="/js/listar.js"></script>
+</body>
+</html>  
