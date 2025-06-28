@@ -1,0 +1,23 @@
+.logout-button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color var(--transition-speed);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;   /* Evita quebra */
+  width: auto !important; /* Força a largura automática */
+  display: inline-block;  /* Evita expandir largura */
+  min-width: unset;       /* Remove larguras mínimas padrão */
+}
+.logout-button:hover {
+  background-color: var(--primary-hover);
+}

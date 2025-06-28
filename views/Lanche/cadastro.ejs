@@ -1,0 +1,19 @@
+<h1>Cadastro de Lanche</h1>
+<a href="/logout" class="logout-button">Sair</a>
+
+<form >
+  <label for="nome">Nome do Lanche:</label>
+  <input type="text" id="nome" name="nome" required />
+
+  <label for="descricao">Descrição:</label>
+  <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+  <label for="preco">Preço (R$):</label>
+  <input type="number" id="preco" name="preco" step="0.01" required />
+
+  <label for="foto">Foto do lanche:</label>
+  <input type="file" name="foto" accept="image/*" id="foto">
+
+  <button id="btn-cadastrar" type="button">Cadastrar Lanche</button>
+  <div id="mensagem" style="display: none;"></div>
+</form>

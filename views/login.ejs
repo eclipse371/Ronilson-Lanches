@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/login.css">
+  <style>
+    .tela {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 40px;
+      margin-top: 60px;
+      padding: 40px;
+    }
+
+    .login-container, .pedido-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px var(--shadow-color, rgba(0,0,0,0.1));
+      width: 300px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label, input {
+      margin-bottom: 12px;
+    }
+
+    button {
+      background-color: var(--primary-color, #3498db);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover, #2980b9);
+    }
+
+    .msg-erro {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <main class="tela">
+
+    <div class="login-container">
+      <h1>Login</h1>
+
+      <% if (typeof retorno !== 'undefined' && retorno) { %>
+        <div class="msg-erro"><%= retorno %></div>
+      <% } %>
+
+<form method="POST" action="/">
+        <label for="usuario">Usuário</label>
+        <input type="text" name="usuario" id="usuario" required placeholder="Digite seu usuário">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" required placeholder="Digite sua senha">
+
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <div class="pedido-container">
+      <h2>Cliente?</h2>
+      <p>Você pode fazer pedidos sem login</p>
+      <a href="/lanche">
+        <button type="button">Fazer Pedidos</button>
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>

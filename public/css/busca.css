@@ -1,0 +1,39 @@
+.busca-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  gap: 10px;
+}
+
+#inputBusca {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--btn-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#inputBusca:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+#btn-filtrar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--btn-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#btn-filtrar:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.5);
+}

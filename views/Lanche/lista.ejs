@@ -1,0 +1,39 @@
+<h1>Lista de Lanches</h1>
+<div style="margin-bottom: 20px;">
+  <input type="text" id="inputBusca" placeholder="Buscar por nome ou ID..." />
+  <button id="btn-filtrar">Buscar</button>
+<a href="/logout" class="logout-button">Sair</a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Preço (R$)</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="CorpoTabelaLanches">
+    <% for(let i = 0; i < lanches.length; i++) { %>
+      <tr>
+        <td><%= lanches[i].id %></td>
+        <td>
+          <% if (lanches[i].foto) { %>
+            <img src="/uploads/<%= lanches[i].foto %>" alt="Foto do lanche" width="100">
+          <% } else { %>
+            <span>Sem foto</span>
+          <% } %>
+        </td>
+        <td><%= lanches[i].nome %></td>
+        <td><%= lanches[i].descricao %></td>
+        <td>R$ <%= lanches[i].preco %></td>
+        <td>
+          <button class="btn-exclusao" data-id="<%= lanches[i].id %>" data-nome="<%= lanches[i].nome %>">Excluir</button>
+          <button class="btn-edicao" data-id="<%= lanches[i].id %>">Editar</button>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+<h1>Lista de Acompanhamentos</h1>
+<div style="margin-bottom: 20px;">
+  <input type="text" id="inputBusca" placeholder="Buscar por nome ou ID..." />
+  <button id="btn-filtrar">Buscar</button>
+<a href="/logout" class="logout-button">Sair</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Preço (R$)</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="CorpoTabelaAcompanha">
+    <% for(let i = 0; i < acompanhamentos.length; i++) { %>
+      <tr>
+        <td><%= acompanhamentos[i].id %></td>
+        <td><%= acompanhamentos[i].nome %></td>
+        <td><%= acompanhamentos[i].preco %></td>
+        <td>
+          <button class="btn-exclusao" data-id="<%= acompanhamentos[i].id %>" data-nome="<%= acompanhamentos[i].nome %>">Excluir</button>
+          <button class="btn-edicao" data-id="<%= acompanhamentos[i].id %>">Editar</button>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

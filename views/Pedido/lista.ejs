@@ -1,0 +1,25 @@
+<h1>Lista de Lanches</h1>
+<div style="margin-bottom: 20px;">
+  <input type="text" id="inputBusca" placeholder="Buscar por nome ou ID..." />
+  <button id="btn-filtrar">Buscar</button>
+<a href="/logout" class="logout-button">Sair</a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Preço Total(R$)</th>
+    </tr>
+  </thead>
+  <tbody id="CorpoTabelaPedido">
+    <% for(let i = 0; i < lista.length; i++) { %>
+      <tr>
+        <td><%= lista[i].id %></td>
+        <td><%= lista[i].nome %></td>
+        <td><%= lista[i].endereco %></td>
+        <td>R$ <%= lista[i].preco %></td>
+    <% } %>
+  </tbody>
+</table>

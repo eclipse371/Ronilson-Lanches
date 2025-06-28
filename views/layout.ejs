@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= typeof title !== 'undefined' ? title : 'Meu App' %></title>
+
+  <!-- Aqui você pode linkar CSS global, por exemplo: -->
+  <link rel="stylesheet" href="/css/style.css" />
+   <link rel="stylesheet" href="/css/layout.css">
+   <link rel="stylesheet" href="/css/busca.css">
+   <link rel="stylesheet" href="/css/botaolog.css">
+
+</head>
+<body>
+
+  <nav class="sidebar">
+    <h2 style="text-align:center; margin-bottom: 20px;">Menu</h2>
+   <a href="/lanche/cadastro">Cadastrar Lanche</a>
+  <a href="/lanche/lista">Lista de Lanches</a>
+  <a href="/acompanhamento/cadastro">Cadastro de Acompanhamento</a>
+  <a href="/acompanhamento/lista">Lista de Acompanhamentos</a>
+  <a href="/bebida/cadastro">Cadastro de Bebidas</a>
+  <a href="/bebida/lista">Lista de Bebidas</a>
+  <a href="/pedido">Lista de Pedidos</a>
+
+
+
+    <!-- Adicione mais links aqui -->
+  </nav>
+
+  <main class="content">
+    <%- body %>
+  </main>
+
+  <!-- Scripts globais -->
+  <script src="/js/global.js"></script>
+
+  <!-- Scripts específicos das views -->
+  <% if (typeof scripts !== 'undefined') { %>
+    <% scripts.forEach(function(script) { %>
+      <script src="<%= script %>"></script>
+    <% }); %>
+  <% } %>
+
+
+</body>
+</html>

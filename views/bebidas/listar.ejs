@@ -1,0 +1,29 @@
+<h1>Lista de Bebidas</h1>
+<div style="margin-bottom: 20px;">
+  <input type="text" id="inputBusca" placeholder="Buscar por nome ou ID..." />
+  <button id="btn-filtrar">Buscar</button>
+<a href="/logout" class="logout-button">Sair</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Preço (R$)</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="CorpoTabelaBebidas">
+    <% for(let i = 0; i < bebidas.length; i++) { %>
+      <tr>
+        <td><%= bebidas[i].id %></td>
+        <td><%= bebidas[i].nome %></td>
+        <td><%= bebidas[i].preco %></td>
+        <td>
+          <button class="btn-exclusao" data-id="<%= bebidas[i].id %>" data-nome="<%= bebidas[i].nome %>">Excluir</button>
+          <button class="btn-edicao" data-id="<%= bebidas[i].id %>">Editar</button>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

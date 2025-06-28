@@ -1,0 +1,296 @@
+:root {
+  --primary-color: #3498db;
+  --primary-hover: #2980b9;
+  --success-color: #4caf50;
+  --danger-color: #e74c3c;
+  --danger-hover: #c0392b;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --input-border: #ccc;
+  --input-focus-border: var(--success-color);
+  --btn-radius: 6px;
+  --transition-speed: 0.3s;
+  --sidebar-width: 220px;
+  --shadow-color: rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* SIDEBAR */
+nav.sidebar {
+  width: var(--sidebar-width);
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  user-select: none;
+  box-shadow: 2px 0 8px var(--shadow-color);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Scroll discreto na sidebar */
+nav.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+nav.sidebar::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+nav.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+nav.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  display: block;
+  transition: background-color var(--transition-speed);
+  font-weight: 600;
+}
+
+nav.sidebar a:hover,
+nav.sidebar a.active {
+  background-color: #444;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main.content {
+  margin-left: var(--sidebar-width);
+  padding: 20px 30px;
+  flex-grow: 1;
+  background-color: white;
+  box-shadow: 0 0 10px var(--shadow-color);
+  min-height: 100vh;
+}
+
+/* TITULOS */
+h1 {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* FORMULÁRIOS */
+form {
+  background-color: white;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  user-select: none;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  resize: vertical;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+form textarea {
+  min-height: 100px;
+}
+
+#btn-cadastrar,
+#btn-editar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.85rem 1.25rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  user-select: none;
+}
+
+#btn-cadastrar:hover,
+#btn-cadastrar:focus,
+#btn-editar:hover,
+#btn-editar:focus {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.5);
+  outline: none;
+}
+
+#mensagem {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--danger-color);
+  user-select: none;
+}
+
+/* TABELAS */
+table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  border-bottom: 2px solid var(--primary-hover);
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* BOTOES DE AÇÃO */
+.btn-exclusao, .btn-edicao {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  margin-right: 8px;
+  color: white;
+  user-select: none;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-exclusao {
+  background-color: var(--danger-color);
+}
+
+.btn-exclusao:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-edicao {
+  background-color: var(--primary-color);
+}
+
+.btn-edicao:hover {
+  background-color: var(--primary-hover);
+}
+
+/* LINKS */
+a {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color var(--transition-speed);
+  user-select: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary-hover);
+  outline: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  form {
+    width: 95%;
+    padding: 1.5rem 1.25rem;
+  }
+
+  #btn-cadastrar,
+  #btn-editar {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  a {
+    font-size: 0.95rem;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .btn-exclusao, .btn-edicao {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
